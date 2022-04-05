@@ -1,9 +1,7 @@
 # strinary
-Optimize the memory uses  in Delphi strings
+Optimize the memory uses in Delphi strings
 
 ¿ can a file be read in memory, using less memory space  than in DISK?
-
-Sorry for my bad english. If you understand the question, thank you.
 
 I think  your first response maybe was NO. At least it uses the same space.
 Next,  you can think than if you compress the de data in memory it uses less space.
@@ -70,11 +68,14 @@ Much of the code used to compose reports , make information to display or write 
 
 The Delphi compiler makes  it easy, but translated to machine code, the string operation had a overload cost  because it creates temporary string variables in some operation, which uses lot of allocate-free memory operation.
 
+```
 for i:=0 to 1000 do 
 begin
   s:=s+’x’
 end;
 
+
+```
 It produces at least 1000 calls to memory reallocation management. In a more complex loop, with several string modifications, the calls to memory management grown a lot.
 
     It sound  like a joke, some time we don’t want to use classes, because it need memory allocation, creation call, and destroy, And we haven’t problem to use strings, forgetting that an string is similar to an object or class. Alloc memory and releases it when finish the use.
